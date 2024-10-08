@@ -1,4 +1,4 @@
-package ch.makery.address.addressapp;
+package ch.makery.address;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

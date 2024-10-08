@@ -1,8 +1,8 @@
-module ch.makery.address.addressapp {
+module ch.makery.address {
     requires javafx.controls;
     requires javafx.fxml;
 
-
-    opens ch.makery.address.addressapp to javafx.fxml;
-    exports ch.makery.address.addressapp;
+    opens ch.makery.address.view to javafx.fxml;
+    exports ch.makery.address;
+    exports ch.makery.address.model;
 }
