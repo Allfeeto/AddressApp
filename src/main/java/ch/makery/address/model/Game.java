@@ -17,6 +17,13 @@ public class Game {
         this.genre = new SimpleStringProperty(genre);
         this.systemRequirements = new SimpleStringProperty(systemRequirements);
     }
+    public Game() {
+        this.title = new SimpleStringProperty("");
+        this.year = new SimpleIntegerProperty(0);
+        this.genre = new SimpleStringProperty("");
+        this.systemRequirements = new SimpleStringProperty("");
+    }
+
 
     public String getTitle() {
         return title.get();
@@ -49,4 +56,22 @@ public class Game {
     public StringProperty systemRequirementsProperty() {
         return systemRequirements;
     }
+
+    public void setTitle(String title) {
+        this.title.set(title);
+    }
+
+    public void setYear(int year) {
+        this.year.set(year);
+    }
+
+    public void setGenre(String genre) {
+        this.genre.set(genre);
+    }
+
+    public void setSystemRequirements(String systemRequirements) {
+        this.systemRequirements.set(systemRequirements);
+    }
+
 }
+
