@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.GameOverviewController">
+<AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.GameOverviewController">
    <children>
       <SplitPane dividerPositions="0.29797979797979796" layoutX="153.0" layoutY="70.0" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -28,10 +28,10 @@
                   </TableView>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="background">
                <children>
-                  <Label layoutX="104.0" layoutY="51.0" text="Games Details" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
-                  <GridPane layoutX="43.0" layoutY="104.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="30.0">
+                  <Label layoutX="104.0" layoutY="51.0" styleClass="label-header" text="Games Details" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                  <GridPane layoutX="43.0" layoutY="104.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="70.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -41,26 +41,24 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <Label text="Title" />
                         <Label text="Year" GridPane.rowIndex="1" />
                         <Label text="Genre" GridPane.rowIndex="2" />
                         <Label text="System requirements" GridPane.rowIndex="3" />
-                         <Label fx:id="titleLabel" text="Label" GridPane.columnIndex="1" />
-                         <Label fx:id="yearLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                         <Label fx:id="genreLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                         <Label fx:id="systemLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                         <Label fx:id="titleLabel" styleClass="label-bright" text="Label" GridPane.columnIndex="1" />
+                         <Label fx:id="yearLabel" styleClass="label-bright" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                         <Label fx:id="genreLabel" styleClass="label-bright" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                         <Label fx:id="systemLabel" styleClass="label-bright" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
 
                      </children>
                   </GridPane>
                   <ButtonBar layoutX="54.0" layoutY="250.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
                     <buttons>
-                      <Button mnemonicParsing="false" onAction="#handleNewGame" text="New..." />
-                        <Button mnemonicParsing="false" onAction="#handleEditGame" text="Edit..." />
+                      <Button mnemonicParsing="false" onAction="#handleNewGame" text="New" />
+                        <Button mnemonicParsing="false" onAction="#handleEditGame" text="Edit" />
                         <Button mnemonicParsing="false" onAction="#handleDeleteGame" text="Delete" />
                     </buttons>
                   </ButtonBar>

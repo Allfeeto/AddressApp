@@ -11,7 +11,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.scene.image.Image;
 
+import java.awt.*;
 import java.io.IOException;
 
 import ch.makery.address.view.GameOverviewController;
@@ -47,6 +49,9 @@ public class MainApp extends Application {
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("GamesApp");
+
+        // Устанавливаем иконку приложения.
+        this.primaryStage.getIcons().add(new Image("file:resources/ch/makery/address/view/game_icon.png"));
 
         initRootLayout();
         showGamesOverview();
