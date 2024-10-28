@@ -265,6 +265,8 @@ public class MainApp extends Application {
             alert.setContentText("Could not save data to file:\n" + file.getPath());
 
             alert.showAndWait();
+            // Log the exception stack trace
+            e.printStackTrace();
         }
     }
 

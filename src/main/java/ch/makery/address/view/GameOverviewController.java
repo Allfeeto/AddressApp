@@ -7,6 +7,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import ch.makery.address.MainApp;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+
 
 
 public class GameOverviewController {
@@ -37,19 +40,19 @@ public class GameOverviewController {
     /**
      * Инициализация таблицы.
      */
-    @FXML
-    private void initialize() {
-        // Инициализируем таблицу с двумя колонками.
-        titleColumn.setCellValueFactory(cellData -> cellData.getValue().titleProperty());
-        yearColumn.setCellValueFactory(cellData -> cellData.getValue().yearProperty().asObject());
+   @FXML
+        private void initialize() {
+       // Инициализируем таблицу с двумя колонками.
+       titleColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTitle()));
+       yearColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getYear()).asObject());
 
-        // Очистка дополнительной информации об адресате.
-        showGameDetails(null);
+       // Очистка дополнительной информации об адресате.
+            showGameDetails(null);
 
-        // Слушаем изменения выбора, и при изменении отображаем
-        // дополнительную информацию об адресате.
-        gamesTable.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> showGameDetails(newValue));
+            // Слушаем изменения выбора, и при изменении отображаем
+            // дополнительную информацию об адресате.
+            gamesTable.getSelectionModel().selectedItemProperty().addListener(
+                    (observable, oldValue, newValue) -> showGameDetails(newValue));
     }
 
     /**

@@ -1,77 +1,63 @@
 package ch.makery.address.model;
 
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-import javafx.beans.property.IntegerProperty;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement(name = "game")
 public class Game {
-    private final StringProperty title;
-    private final IntegerProperty year;
-    private final StringProperty genre;
-    private final StringProperty systemRequirements;
+
+    private String title;
+    private int year;
+    private String genre;
+    private String systemRequirements;
 
     public Game(String title, int year, String genre, String systemRequirements) {
-        this.title = new SimpleStringProperty(title);
-        this.year = new SimpleIntegerProperty(year);
-        this.genre = new SimpleStringProperty(genre);
-        this.systemRequirements = new SimpleStringProperty(systemRequirements);
+        this.title = title;
+        this.year = year;
+        this.genre = genre;
+        this.systemRequirements = systemRequirements;
     }
+
     public Game() {
-        this.title = new SimpleStringProperty("");
-        this.year = new SimpleIntegerProperty(0);
-        this.genre = new SimpleStringProperty("");
-        this.systemRequirements = new SimpleStringProperty("");
+        this.title = "";
+        this.year = 0;
+        this.genre = "";
+        this.systemRequirements = "";
     }
 
-
+    @XmlElement
     public String getTitle() {
-        return title.get();
-    }
-
-    public StringProperty titleProperty() {
         return title;
     }
 
-    public int getYear() {
-        return year.get();
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public IntegerProperty yearProperty() {
+    @XmlElement
+    public int getYear() {
         return year;
     }
 
-    public String getGenre() {
-        return genre.get();
+    public void setYear(int year) {
+        this.year = year;
     }
 
-    public StringProperty genreProperty() {
+    @XmlElement
+    public String getGenre() {
         return genre;
     }
 
-    public String getSystemRequirements() {
-        return systemRequirements.get();
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
-    public StringProperty systemRequirementsProperty() {
+    @XmlElement
+    public String getSystemRequirements() {
         return systemRequirements;
     }
 
-    public void setTitle(String title) {
-        this.title.set(title);
-    }
-
-    public void setYear(int year) {
-        this.year.set(year);
-    }
-
-    public void setGenre(String genre) {
-        this.genre.set(genre);
-    }
-
     public void setSystemRequirements(String systemRequirements) {
-        this.systemRequirements.set(systemRequirements);
+        this.systemRequirements = systemRequirements;
     }
-
 }
-
